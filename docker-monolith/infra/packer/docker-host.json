@@ -1,0 +1,29 @@
+{
+  "builders": [
+    {
+      "type": "yandex",
+      "platform_id": "standard-v1",
+      "service_account_key_file": "{{ user `path_to_service_account_key`}}",
+      "folder_id": "{{ user `catalogue_id`}}",
+      "use_ipv4_nat": "true",
+      "disk_type": "{{ user `disk_t`}}",
+      "disk_size_gb": "{{ user `disk_size`}}",
+
+      "source_image_family": "{{ user `os_image_id`}}",
+      "image_name": "docker-host-{{timestamp}}",
+      "image_family": "docker",
+      "image_description": "Fried docker engine",
+
+      "ssh_username": "ubuntu",
+      "ssh_pty": "true"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "ansible",
+      "playbook_file": "ansible/playbooks/packer-docker.yml",
+      "use_proxy": false,
+      "pause_before": "30s"
+    }
+  ]
+}

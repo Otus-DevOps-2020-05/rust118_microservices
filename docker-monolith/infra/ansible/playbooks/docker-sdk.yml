@@ -1,0 +1,14 @@
+---
+- name: Install docker SDK
+  hosts: all
+  environment:
+    PYTHONPATH: "/home/ubuntu/.local/lib/python3.5/site-packages:/usr/local/lib/python3.5/dist-packages"
+    LC_ALL: C
+  tasks:
+
+  - name: Install pip3
+    become: true
+    apt: name=python3-pip
+
+  - name: Install docker SDK module
+    pip: name=docker
