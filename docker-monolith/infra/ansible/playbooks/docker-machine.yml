@@ -1,0 +1,14 @@
+---
+- name: Install docker && run app container
+  hosts: all
+  gather_facts: no
+  tasks:
+
+  - name: Clean docker-machine registry
+    delegate_to: localhost
+    command: docker-machine rm -f -y {{ inventory_hostname }}
+    no_log: true
+
+  - name: Install docker
+    delegate_to: localhost
+    command: docker-machine create --driver generic --generic-ip-address={{ inventory_hostname }} --generic-ssh-user ubuntu --generic-ssh-key ~/.ssh/ubuntu {{ inventory_hostname }}

@@ -1,0 +1,13 @@
+REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
+rust118/ubuntu-tmp-file   latest              fb1fa9b90404        37 seconds ago      64.2MB
+docker101tutorial         latest              6ac8dfe1cd6c        23 hours ago        26.8MB
+<none>                    <none>              874ef8ce3855        23 hours ago        123MB
+<none>                    <none>              f574a2ae26ba        23 hours ago        110MB
+<none>                    <none>              7e66ac216cee        23 hours ago        224MB
+python                    alpine              bcf3965d8456        4 days ago          80.3MB
+node                      12-alpine           18f4bc975732        6 days ago          89.3MB
+ubuntu                    18.04               2eb2d388e1a2        10 days ago         64.2MB
+nginx                     alpine              ecd67fe340f9        3 weeks ago         21.6MB
+hello-world               latest              bf756fb1ae65        7 months ago        13.3kB
+
+Образ - файл, содержащий в себе файлы приложений, библиотеки и настройки. Контейнер - выполяюшийся образ.

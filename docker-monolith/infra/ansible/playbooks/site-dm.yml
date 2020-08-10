@@ -1,0 +1,4 @@
+---
+- import_playbook: docker-machine.yml
+- import_playbook: docker-sdk.yml
+- import_playbook: deploy.yml
