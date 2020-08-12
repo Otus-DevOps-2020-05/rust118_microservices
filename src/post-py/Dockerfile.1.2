@@ -1,0 +1,12 @@
+FROM alpine:3.6
+
+WORKDIR /app
+ADD . /app
+
+RUN apk add --no-cache gcc musl-dev python3 python3-dev
+RUN pip3 install -r /app/requirements.txt
+
+ENV POST_DATABASE_HOST post_db
+ENV POST_DATABASE posts
+
+CMD ["python3", "post_app.py"]
